@@ -1,21 +1,27 @@
 import TodoContainer from "../../containers/TodoContainer";
 import React from "react";
 import axios from 'axios'
+import { List, message, Avatar, Spin } from 'antd';
+import './todoList.css'
 
 export default class TodoList extends React.Component {
-  componentDidMount(){
-    axios.get("https://5e9ec500fb467500166c4658.mockapi.io/todos").then((response)=>{
+
+  componentDidMount() {
+    axios.get("http://localhost:8081/todos/").then((response) => {
       console.log(response.data);
       this.props.getTodoList(response.data)
-    })  
+    })
   }
 
   render() {
-    return this.props.todoList.map((todo, index) => (
-      <div>
-        <TodoContainer value={todo} key={index} index={index} />
-        <br />
-      </div>
-    ));
+    return (<List
+      size="large"
+      className="list"
+      dataSource={this.props.todoList}
+      renderItem={(todo, index) =>
+        <List.Item className="item" style={{width:'auto'}}>
+          <TodoContainer value={todo} key={index} index={index} />
+        </List.Item>}
+    />)
   }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button , Input} from 'antd';
+import { Button , Input,Space} from 'antd';
 
 
 class TodoForm extends React.Component {
@@ -20,10 +20,10 @@ class TodoForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <Space style={{marginTop:'10px'}}>
         <Input id="value" type="text" onChange={this.changeValue} />
         <Button onClick={this.addTodo}>ADD</Button>
-      </div>
+      </Space>
     );
   }
 }

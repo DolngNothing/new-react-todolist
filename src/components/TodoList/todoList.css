@@ -1,0 +1,9 @@
+.list{
+    height:600px;
+    overflow-y: scroll;
+}
+
+.item:hover{
+    box-shadow: 0 0 20px 2px #918f8f;/*盒子阴影*/
+    transition: all 0.5s;/*持续时间*/
+}

@@ -1,7 +1,15 @@
 .done {
+    font-size: 16px;
     color: red;
 }
 
 .undo {
-    color: white;
+    font-size: 16px;
+    color: black;
+}
+
+.todo{
+    position: relative;
+    text-align: left;
+    width: 100%;
 }
